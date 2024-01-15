@@ -1,8 +1,43 @@
 div{
-    border: 2px solid red;
-    background-color: hsl(0, 0%, 0%, 0.5);
+    border: 2px solid yellowgreen;
+    background-color: hsla(71, 100%, 50%, 0.5);
+    padding: 30px;
+    margin :auto;
+    display: block;
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'TAEBAEKfont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+div > div{
     color: red;
+    font-family:'TAEBAEKfont';
+    font-size: 10px;
+    width: 250px;
+}
+
+.B{
     font-size: 15px;
-    padding: 25px;
-    margin: 20px;
+    border: none;
+    background: none;
+    color: dodgerblue;
+}
+
+.C{
+    border: none;
+    background: none ;
+}
+
+
+.button{
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -24,52 +24,61 @@ function test(){
 
 //--------------------------------------------------
 
+const output = document.getElementById("balance"); 
+const amount = document.getElementById("atm");
 
-const money = document.getElementById(money)
-const Balance = document.getElementById(Balance)
+let balance = 10000;       
+const password = '0000';     
 
+output.innerText = balance; 
 
+/* 입금 */
 function deposit(){
 
+if(amount.value.length == 0){
+    alert("금액을 입력해주세요");
+}else{
+    balance += Number(amount.value);
+    output.innerText = balance;
 
-
+    amount.value = ''; 
+}
 }
 
+/* 출금 */
+function withdrawal(){
 
+if(amount.value.length == 0){
+    alert("금액을 입력해주세요");
 
-function withdrawal(){ 
+    }else{
     
-    
-const password = prompt("비밀번호를 입력하세요");
+    const password = prompt("비밀번호를 입력하세요");
 
-
-if(password == null){ 
+    if(password == null){
     alert("취소 되었습니다.");
 
-} else { 
+    }else{
 
-    if(password == '0000'){
-        alert("비밀번호가 일치합니다.");
-    } else {
-        alert("비밀번호 오류.")
-    }
+    if(password != '0000'){
+        alert("비밀번호가 일치하지 않습니다.");
 
-} 
+    }else{
 
+    const money = Number(amount.value);
+
+    if(money > balance){
+    alert("출금 할 수 없습니다.");
+
+    } else{ 
+
+            balance -= money;
+            output.innerText = balance;
+            amount.value = '';
+
+            alert(`${money}원이 출금 되었습니다. 남은 잔액${balance}`)
 }
-
-
-
-
-console.log("op : " , op);
-
-const v1 = Number(number1.value);
-
-
-let result;
-
-switch(op){
-
-    case '+': result = v1 + v2; break;
-    case '-': result = v1 - v2; break;
+}
+}
+}
 }
