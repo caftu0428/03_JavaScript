@@ -390,18 +390,16 @@ function check16(){
 
     // 취소를 누르기 전 까지 반복
     // == 취소를 누르면 반복하지 않겠다
-    while(val != null){
+    while(val !== null){
 
         /* 동일 비교 연산자 */
         // !== -> 값, 자료형이 모두 다른 경우 true
         // === -> 값, 자료형이 모두 같은 경우 true
 
-
-        vla = prompt("입력 후 확인"); // 변수에 prompt 값 대입
+        val = prompt("입력 후 확인"); // 변수에 prompt 값 대입
         // 확인 -> 입력한 값
         // 취소 -> null
 
-        
         console.log(val);
     }
 }
