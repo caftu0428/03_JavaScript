@@ -67,17 +67,11 @@ if(amount.value.length == 0){
 
     const money = Number(amount.value);
 
-    if(money > balance){
-    alert("출금 할 수 없습니다.");
-
-    } else{ 
-
             balance -= money;
             output.innerText = balance;
             amount.value = '';
 
-            alert(`${money}원이 출금 되었습니다. 남은 잔액${balance}`)
-}
+
 }
 }
 }
