@@ -61,22 +61,24 @@ function check4(){
 */
 function check5(){
 
-    for(let y=1 ; y<=5 ; y++){
+    for(let row=1 ; row<=5 ; row++){
 
         let str = "";
-        for(let x=0 ; x<=9 ; x++){
+        for(let col=0 ; col<=9 ; col++){
 
             // 0을 제외한 4의 배수인 경우
-            if( x != 0 && x % 4 == 0 )
+            if( col != 0 && col % 4 == 0 )
                 continue;
-            str += x;
+
+            str += col;
         }
         console.log(str);
 
         // 3번째 줄 출력 후 멈춤
-        if(y == 3) break;
+        if(row == 3) break;
     }
 }
+
 //-----------------------------
 
 /* UP/DOWN GAME */
@@ -134,8 +136,8 @@ function startGame(){
         // 입력한 값이 난수보다 큰 경우
         // "[DOWN] /.count : 정답시도횟수"
         // 문자열을 str에 대입 후 다음 반복으로 이동
-        if(input < randomNumber){
-            str = `[UP] / count : ${count}`;
+        if(input > randomNumber){
+            str = `[DOWN] / count : ${count}`;
         }
 
         // 입력한 값이 난수보다 작은 경우
@@ -143,7 +145,7 @@ function startGame(){
         // 문자열을 str에 대입 후 다음 반복으로 이동
 
         else{
-            str = `[DOWN] / count : ${count}`;
+            str = `[UP] / count : ${count}`;
         }
 
     }
