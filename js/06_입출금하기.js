@@ -33,7 +33,10 @@ const output = document.getElementById("balance");
 const amount = document.getElementById("atm");
 
 let balance = 10000;       
-const password = '0000';     
+const password = '0000';  
+
+
+console.log(balance); // 최종 값 출력
 
 output.innerText = balance; 
 
