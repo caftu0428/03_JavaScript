@@ -1,20 +1,22 @@
-const box   = document.querySelector("#box");
-const input1 = document.querySelector("#input1");
-const btn  = document.querySelector("#btn");
+const boxList = document.getElementsByClassName("box");
+const inputList = document.getElementsByClassName("color-input");
 
-btn.addEventListener("click", function(){
-    box.style.backgroundColor = input1.value;
-});
+function changeColor(){
+  for(let i=0 ; i <inputList.length ; i++){
+    boxList[i].style.backgroundColor = inputList[i].value;
+  }
+}
 
-input1.addEventListener("keyup", function(e){
+//--------------------------
+
+inputList.addEventListener("keyup",function(e){
 
     if(e.key == "Enter"){
-        box.style.backgroundColor = input1.value;
+        boxList.style.backgroundColor = inputList.value;
     }
 });
 
-//--------------------------
-box.addEventListener("click", function(e){
+boxList.addEventListener("click", function(e){
 
     alert(`배경색 : ${e.target.style.backgroundColor}`);
 });
