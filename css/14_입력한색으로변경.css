@@ -1,0 +1,17 @@
+.container > div {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid black;
+
+
+    display: flex;
+    transition-duration: 0.5s;
+    justify-content: center;
+
+
+}
+
+#button{
+
+}
