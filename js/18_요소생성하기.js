@@ -6,16 +6,24 @@ const container = document.querySelector(".container");
 */
 
 createBox.addEventListener("click",()=>{
+  
+  /* 1. div 요소 생성 */
+  const box = document.createElement("div");
+  console.log(box); // 만들어졌지만 화면에는 안보임
+  
+  /* 2. 만들어진 div 요소에 "box" 클래스 추가 */
+  box.classList.add("box");
+  
+  /* 3. container의 마지막 자식으로 div요소 축 */
+  container.append(box);
 
-    /* 1. div 요소 생성 */
-    const box = document.createElement("div");
-    console.log(box); // 만들어졌지만 화면에는 안보임
-
-    /* 2. 만들어진 div 요소에 "box" 클래스 추가 */
-    box.classList.add("box");
-
-    /* 3. container의 마지막 자식으로 div요소 축 */
-    container.append(box);
+  /* 4. input 요소 생성 */
+  const input = document.createElement("input");
+  input.type= "text"; // type="text" 지정
+  console.log(input);
+  
+  /* 5. 생성된 input을 box의 마지막 자식으로 추가 */
+  box.append(input);
 });
 
 
@@ -35,6 +43,8 @@ createBox.addEventListener("click",()=>{
     -> 클래스 제거
 */
 
+
+
 /* innerHTML로 요소 추가하기 */
 const innerHTMLBox = document.querySelector("#innerHTMLBox");
 
@@ -44,20 +54,8 @@ innerHTMLBox.addEventListener("click",()=>{
     "<div class='box'></div>" 을 누족 + MTML 해석
   */
 
-    container.innerHTML += "<div class='box'></div>";
-
-
-    /* 4. input 요소 생성 */
-    const input = document.createElement("input");
-
-    input.type= "text"; // type="text" 지정
-
-
-    console.log(input);
-
-    /* 5. 생성된 input을 box의 마지막 자식으로 추가 */
-    box.append(input);
-
+    container.innerHTML
+    += "<div class='box'><input type='text'></div>";
 });
 
 
