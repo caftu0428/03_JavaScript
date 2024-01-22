@@ -19,6 +19,7 @@
     padding : 10px 50px;
     width: 500px;
     margin: 200px auto;
+    background-color: hsl(90, 100%, 50%, 0.5);
   }
   
   .account .row{
@@ -89,13 +90,13 @@
   
   /* 입금 버튼 */
   .deposit-btn{
-    border-color: green !important;
-    color: green;
+    border-color: blue !important;
+    color: blue;
   }
   
   .deposit-btn:hover{
     color: white;
-    background-color: green;
+    background-color: blue;
   }
   
   /* 출금 버튼 */

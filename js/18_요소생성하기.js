@@ -51,7 +51,7 @@ const innerHTMLBox = document.querySelector("#innerHTMLBox");
 innerHTMLBox.addEventListener("click",()=>{
 
   /* container의 이전 내용 
-    "<div class='box'></div>" 을 누족 + MTML 해석
+    "<div class='box'></div>" 을 누적 + MTML 해석
   */
 
     container.innerHTML

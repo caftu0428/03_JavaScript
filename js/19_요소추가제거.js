@@ -33,6 +33,7 @@ addBtn.addEventListener("click", () => {
   
   // 클래스 "input-number" 추가
   input.classList.add("input-number");
+  // input.type = "number";
 
 
   // 3) span 만들기(X버튼)
