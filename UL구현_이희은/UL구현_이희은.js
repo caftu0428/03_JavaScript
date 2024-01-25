@@ -1,9 +1,6 @@
 
 
-
-
 /* 키패드 판 */
-
 
 
 const numbers = document.querySelectorAll(".number");
@@ -28,38 +25,46 @@ document.querySelector("#resetBtn")
 });
 
 
-/* 추가 버튼 클릭 */
-/* + 즐겨찾기 버튼 */
-/* + X 버튼 */
-const phoneBtn = document.querySelector("#phoneBtn");
-const phoneNberList = document.querySelector("#Nber");
+const addBtn = document.querySelector("#phoneBtn");
+const numberList = document.querySelector(".number-list");
 
-phoneBtn.addEventListener("click", e => {
-    const phoneNumber = leftNber.textContent.trim();
+addBtn.addEventListener("click", () => {
+    const phoneNumber = leftNber.textContent;
+
     if (phoneNumber.length === 0) {
-        alert('숫자를 입력하세요');
-    } else {
-        // 전화번호 목록에 추가
-        const newPhoneNumber = document.createElement("div");
-        newPhoneNumber.innerHTML = `${phoneNumber} <span class="favorite">☆</span> <span class="delete">×</span>`;
-        phoneNberList.appendChild(newPhoneNumber);
-        
-        // 입력된 전화번호 초기화
-        leftNber.textContent = "";
-
-        // 삭제 버튼에 이벤트 추가
-        newPhoneNumber.querySelector(".delete").addEventListener("click", () => {
-            newPhoneNumber.remove();
-        });
-
-        // 즐겨찾기 버튼에 이벤트 추가
-        newPhoneNumber.querySelector(".favorite").addEventListener("click", () => {
-            const isFavorite = newPhoneNumber.querySelector(".favorite").textContent === "☆";
-            newPhoneNumber.querySelector(".favorite").textContent = isFavorite ? "★" : "☆";
-            newPhoneNumber.querySelector(".favorite").style.color = isFavorite ? "orange" : "inherit";
-            newPhoneNumber.style.color = isFavorite ? "red" : "inherit";
-        });
+        alert('번호를 누르세요!');
+        return;
     }
+
+    const li = document.createElement("li");
+
+    const span1 = document.createElement("span");
+    span1.textContent = phoneNumber;
+
+    const span2 = document.createElement("span");
+    span2.textContent = "☆";
+
+    span2.addEventListener("click", e => {
+        const parent = e.target.parentElement;
+
+        if (parent.classList.contains("favorites")) {
+            parent.classList.remove("favorites");
+            e.target.textContent = "☆";
+        } else {
+            parent.classList.add("favorites");
+            e.target.textContent = "★";
+        }
+    });
+
+    const span3 = document.createElement("span");
+    span3.innerHTML = "&times;";
+
+    span3.addEventListener("click", e => {
+        e.target.parentElement.remove();
+    });
+
+    li.append(span1, span2, span3);
+    numberList.append(li);
+
+    leftNber.textContent = "";
 });
-
-

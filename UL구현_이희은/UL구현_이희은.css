@@ -142,3 +142,11 @@ main{
 .favorites > span:nth-child(2){
     color: orange;
 }
+
+.number-list li>span:not(:first-child) {
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px; /* 별모양과 X 버튼의 크기를 조절합니다 */
+    margin: -4px 2px; /* 별모양과 X 버튼의 위치를 조절합니다 */
+}
+
